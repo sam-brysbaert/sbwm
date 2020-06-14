@@ -1,5 +1,3 @@
-config.h.orig
-drw.o
+*.orig
+*.o
 dwm
-dwm.o
-util.o
