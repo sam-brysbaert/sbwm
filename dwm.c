@@ -215,6 +215,7 @@ static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tagnextmon(const Arg *arg);
 static void tagothermon(const Arg *arg, int dir);
+static void focusnextmontag(const Arg *arg);
 static void tile(Monitor *);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
@@ -1756,6 +1757,15 @@ tagothermon(const Arg *arg, int dir)
 		focus(NULL);
 		arrange(newmon);
 	}
+}
+
+void
+focusnextmontag(const Arg *arg)
+{
+	Arg a = {.i = -1};
+
+	focusmon(&a);
+	view(arg);
 }
 
 void
